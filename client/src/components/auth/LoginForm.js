@@ -1,5 +1,6 @@
 import { Button, Form } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import {  useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import AlertMessage from "../layout/AlertMessage";
@@ -13,7 +14,7 @@ const LoginForm = () => {
     password: "",
   });
   //Router
-  const history = useHistory();
+  // const history = useHistory();
   const [alert, setAlert] = useState(null);
   const { username, password } = loginForm;
   const onChangeLoginForm = (event) => {
@@ -40,7 +41,6 @@ const LoginForm = () => {
     <>
       <Form onSubmit={login}>
         <AlertMessage info={alert} />
-
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="text"
