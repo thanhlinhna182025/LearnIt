@@ -3,11 +3,24 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 var CryptoJS = require("crypto-js");
 const User = require("../models/User");
+const verifyToken = require("../middleware/auth");
 
-// check API
-// router.get("/", (req, res) => {
-//   res.send("register router");
-// });
+//@router GET api/auth
+//@Desc check if user login
+//access public
+router.get("/", verifyToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.userId).select("-password");
+    if (!user) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User not found" });
+      }
+      res.json({ success: true, user });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
 
 //@router POST api/auth/register
 //@Desc register new user
@@ -44,12 +57,12 @@ router.post("/register", async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET_KEY
     );
     res.status(201).json({
-      succcess: true,
+      success: true,
       message: "User has successfully registered",
       accessToken,
     });
   } catch (error) {
-    res.status(500).json(error.message || error);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
 
@@ -87,12 +100,12 @@ router.post("/login", async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET_KEY
     );
     res.status(200).json({
-      succcess: true,
+      success: true,
       message: "Login successful",
       accessToken,
     });
   } catch (error) {
-    res.status(500).json(error.message || error);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
 

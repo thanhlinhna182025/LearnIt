@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const dotenv = require("dotenv");
+const cors = require("cors");
+
 const authRouter = require("./routers/auth");
 const postRouter = require("./routers/post");
-const dotenv = require("dotenv");
 
 dotenv.config();
 // Plan A connect MonggoDB
@@ -34,12 +36,8 @@ main().catch((err) => {
   console.log(err.message);
   process.exit(1);
 });
-
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+app.use(cors());
 app.use("/api/auth", authRouter);
 app.use("/api/posts", postRouter);
 const PORT = 3000;
