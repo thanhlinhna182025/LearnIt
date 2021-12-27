@@ -21,28 +21,28 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJiN2QyMjA0NWZjNTU3OGYzOThkZDYiLCJpYXQiOjE2Mzk2NzczMjV9.ZBSb2IRPdGn8abBkQ4XGNVYKxMgi87dAvV_WLXXZ7b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJiN2QyMjA0NWZjNTU3OGYzOThkZDYiLCJpYXQiOjE2NDA1OTY0ODZ9.QfGKW_IR9uJS3V5w0cQQFUac5iIokssYgsN7udJ6pYs
 
 {
-  "title": "reactjs",
-  "desc": "React",
+  "title": "Angular3",
+  "desc": "Angular3",
   "url": "reactjs.com",
-  "status": "learning"
+  "status": "learned"
 }
 
 ###
 
 GET http://localhost:3000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJiN2QyMjA0NWZjNTU3OGYzOThkZDYiLCJpYXQiOjE2Mzk2NzczMjV9.ZBSb2IRPdGn8abBkQ4XGNVYKxMgi87dAvV_WLXXZ7b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJiN2QyMjA0NWZjNTU3OGYzOThkZDYiLCJpYXQiOjE2NDA1OTY0ODZ9.QfGKW_IR9uJS3V5w0cQQFUac5iIokssYgsN7udJ6pYs
 
 ###
 
-PUT http://localhost:3000/api/posts/61bb819d4cfa01641d49517c
+PUT http://localhost:3000/api/posts/61c9855c2eda044f839cbb49
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJiN2QyMjA0NWZjNTU3OGYzOThkZDYiLCJpYXQiOjE2Mzk2NzczMjV9.ZBSb2IRPdGn8abBkQ4XGNVYKxMgi87dAvV_WLXXZ7b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJiN2QyMjA0NWZjNTU3OGYzOThkZDYiLCJpYXQiOjE2NDA1OTY0ODZ9.QfGKW_IR9uJS3V5w0cQQFUac5iIokssYgsN7udJ6pYs
 
 {
-  "title": "Vqeque",
+  "title": "daxua",
   "desc": "VUEEEEE",
   "url": "https://vuejs.org",
   "status": "LEARNING"

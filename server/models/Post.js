@@ -3,24 +3,24 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema(
   {
-    title :{
-        type: String,
-        required: true
+    title: {
+      type: String,
+      required: true,
     },
-    desc:{
-        type:String
+    desc: {
+      type: String,
     },
-    url:{
-        type: String
+    url: {
+      type: String,
     },
-    status:{
-        type:String,
-        enum:["to learn","learning","learned"]
+    status: {
+      type: String,
+      enum: ["TO LEARN", "LEARN", "LEARNED"],
     },
-    user:{
-        type:Schema.Types.ObjectId,
-        ref:"users"
-    }
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
+    },
   },
   {
     timestamps: true,

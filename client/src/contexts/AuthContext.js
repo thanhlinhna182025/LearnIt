@@ -86,8 +86,16 @@ const AuthContextProvider = ({ children }) => {
       }
     }
   };
+  //Log out
+  const logoutUser = () => {
+    localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME);
+    dispatch({
+      type: "SET_AUTH",
+      payload: { isAuthenticated: false, user: null },
+    });
+  };
   // Tạo biến chứa context data
-  const authContextData = { loginUser, authState, registerUser };
+  const authContextData = { loginUser, authState, registerUser, logoutUser };
   // Trả về Provider
   return (
     <AuthContext.Provider value={authContextData}>

@@ -22,7 +22,7 @@ router.post("/", verifyToken, async (req, res) => {
       title,
       desc,
       url: url.startsWith("https://") ? url : `https://${url}`,
-      status: status || "to learn",
+      status: status || "TO LEARN",
       user: req.userId,
     });
     await newPost.save();
@@ -63,10 +63,10 @@ router.put("/:id", verifyToken, async (req, res) => {
       title,
       desc: desc || "",
       url: (url.startsWith("https://") ? url : `https://${url}`) || "",
-      status: status || "to learn",
+      status: status || "TO LEARN",
     };
     const updateCondition = { _id: req.params.id, user: req.userId };
-    updatePost = await Post.findOneAndUpdate(updateCondition, updateCondition, {
+    updatePost = await Post.findOneAndUpdate(updateCondition, updatePost, {
       new: true,
     });
     // User not authorised to update post or post not found

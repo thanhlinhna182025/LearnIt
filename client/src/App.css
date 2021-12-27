@@ -1,5 +1,8 @@
-.ml-2{
-  margin-left:2rem;
+.ml-1 {
+  margin-left: 1rem;
+}
+.mr-1 {
+  margin-right: 1rem;
 }
 .landing {
   position: relative;
@@ -49,7 +52,7 @@
 }
 
 .post-button:hover {
-  background: transparent;
+  background: rgb(227, 227, 227);
 }
 
 a.post-button.btn:focus,
@@ -73,18 +76,18 @@ button.post-button.btn:active {
   position: fixed;
   right: 3rem;
   bottom: 3rem;
-  background: transparent;
+  /* background: transparent; */
   border: none;
 }
 
 .btn-floating:hover {
-  background: transparent;
+  background: #002fff;
 }
 
 .btn-floating:focus,
 .btn-floating:active {
   outline: none;
-  background: transparent;
+  background: #002fff;
   border: none;
   box-shadow: none;
 }
