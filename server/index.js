@@ -8,23 +8,6 @@ const authRouter = require("./routers/auth");
 const postRouter = require("./routers/post");
 
 dotenv.config();
-// Plan A connect MonggoDB
-// const connectDB = async () => {
-//   try {
-//     await mongoose.connect(
-//       `mongodb+srv://${process.env.MONGGO_USER}:${process.env.MONGGO_PASSWORD}@cluster0.sbb2m.mongodb.net/app?retryWrites=true&w=majority`,
-//       {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//       }
-//     );
-//     console.log("mongoDB connected");
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-// connectDB();
-// Plan B connect MonggoDB
 
 async function main() {
   await mongoose.connect(
@@ -40,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/auth", authRouter);
 app.use("/api/posts", postRouter);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`listening ${PORT}`);
 });
