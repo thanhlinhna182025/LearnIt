@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
-const cors = require("cors");
+// const cors = require("cors");
 
 const authRouter = require("./routers/auth");
 const postRouter = require("./routers/post");
@@ -20,7 +20,12 @@ main().catch((err) => {
   process.exit(1);
 });
 app.use(express.json());
-app.use(cors());
+// const corsOptions = {
+//   origin: "http://localhost:3000",
+//   credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// };
+// app.use(cors(corsOptions));
 app.use("/api/auth", authRouter);
 app.use("/api/posts", postRouter);
 const PORT = process.env.PORT || 3000;
