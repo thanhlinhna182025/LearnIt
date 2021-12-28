@@ -1,7 +1,7 @@
 export const apiUrl =
   process.env.NODE_ENV !== "production"
-    ? "http://localhost:3000/api"
-    : "someURL";
+    ? "https://localhost:3000/api"
+    : "https://obscure-sea-07395.herokuapp.com/api";
 export const LOCAL_STORAGE_TOKEN_NAME = "learnitToken";
 export const POSTS_LOADED_SUCCESS = "POSTS_LOADED_SUCCESS";
 export const POSTS_LOADED_FAIL = "POSTS_LOADED_FAIL";
