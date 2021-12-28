@@ -1,6 +1,6 @@
 export const apiUrl =
   process.env.NODE_ENV !== "production"
-    ? "https://aqueous-inlet-29308.herokuapp.com/api"
+    ? "http://localhost:3000/api"
     : "someURL";
 export const LOCAL_STORAGE_TOKEN_NAME = "learnitToken";
 export const POSTS_LOADED_SUCCESS = "POSTS_LOADED_SUCCESS";

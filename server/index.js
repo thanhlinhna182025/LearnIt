@@ -18,7 +18,7 @@ main().catch((err) => {
   process.exit(1);
 });
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use("/api/auth", authRouter);
 app.use("/api/posts", postRouter);
 const PORT = process.env.PORT || 3000;
