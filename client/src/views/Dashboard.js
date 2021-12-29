@@ -77,7 +77,7 @@ const Dashboard = () => {
             variant="primary"
             onClick={setShowAddPostModal.bind(this, true)}
           >
-            <img src={AddIcon} width="24" height="24" />
+            <img src={AddIcon} width="24" height="24" alt="Add" />
           </Button>
         </OverlayTrigger>
       </div>
